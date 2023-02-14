@@ -25,6 +25,12 @@ export class CreateUserService {
       throw new AppError('Invalid name!', 400);
     }
 
+    const existUser = await this.userRepository.findByEmail(email);
+
+    if (existUser) {
+      throw new AppError('This user already exists!', 400);
+    }
+
     const encryptedPassword = await this.hashProvider.encrypt(password);
 
     return this.userRepository.create({
