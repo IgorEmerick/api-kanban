@@ -10,7 +10,7 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/server.ts",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/shared/infra/typeorm/data_sources/AppDataSource.ts"
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/shared/infra/typeorm/data_sources/DefaultDataSource.ts"
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
@@ -30,9 +30,12 @@
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.3.0",
     "@sinclair/typebox": "^0.25.21",
+    "@types/bcrypt": "^5.0.0",
     "awilix": "^8.0.0",
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "fastify": "^4.13.0",
+    "pg": "^8.9.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.12"
   }

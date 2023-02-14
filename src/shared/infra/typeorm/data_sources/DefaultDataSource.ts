@@ -5,11 +5,11 @@ config();
 
 export const DefaultDataSource = new DataSource({
   type: 'postgres',
-  host: process.env.DATABASE_HOST,
-  port: Number(process.env.DATABASE_PORT),
-  username: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: 'kanban_board',
+  host: process.env.DEFAULT_DATABASE_HOST,
+  port: Number(process.env.DEFAULT_DATABASE_PORT),
+  username: process.env.DEFAULT_DATABASE_USER,
+  password: process.env.DEFAULT_DATABASE_PASSWORD,
+  database: 'kanban',
   schema: 'public',
   synchronize: false,
   entities: ['./src/modules/**/infra/typeorm/entities/*.ts'],
