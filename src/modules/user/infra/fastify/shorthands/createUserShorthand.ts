@@ -1,3 +1,4 @@
+import { buildErrorShorthand } from '@shared/utils/buildErrorShorthand';
 import { RouteShorthandOptions } from 'fastify';
 import { createUserBody } from '../bodies/createUserBody';
 import { userShorthandPropertiesModel } from './models/userShorthandPropertiesModel';
@@ -12,6 +13,7 @@ export const createUserShorthand: RouteShorthandOptions = {
         type: 'object',
         properties: userShorthandPropertiesModel,
       },
+      400: buildErrorShorthand(400),
     },
   },
 };
