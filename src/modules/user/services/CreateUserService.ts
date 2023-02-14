@@ -4,6 +4,7 @@ import { User } from '../infra/typeorm/entities/User';
 import { IHashProvider } from '../providers/models/IHashProvider';
 import { IUserRepository } from '../repositories/IUserRepository';
 import { validateEmail } from '../utils/validateEmail';
+import { validateName } from '../utils/validateName';
 
 export class CreateUserService {
   constructor(
@@ -16,6 +17,12 @@ export class CreateUserService {
 
     if (!validEmail) {
       throw new AppError('Invalid email!', 400);
+    }
+
+    const validName = await validateName(name);
+
+    if (!validName) {
+      throw new AppError('Invalid name!', 400);
     }
 
     const encryptedPassword = await this.hashProvider.encrypt(password);
