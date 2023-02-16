@@ -2,6 +2,10 @@ import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUi from '@fastify/swagger-ui';
 import { userRouter } from '@modules/user/infra/http/routes/userRouter';
 import fastify from 'fastify';
+import cors from '@fastify/cors';
+import { config } from 'dotenv';
+
+config();
 
 const app = fastify();
 
@@ -25,6 +29,8 @@ app.register(fastifySwaggerUi, {
   routePrefix: '/documentation',
   staticCSP: true,
 });
+
+app.register(cors, { origin: process.env.API_ORIGIN });
 
 app.register(userRouter, { prefix: '/user' });
 
