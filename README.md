@@ -6,7 +6,7 @@
 - [x] Request name, email and password.
 - [x] Should not create users with invalid emails.
 - [x] Should not create users with invalid names.
-- [ ] Should not create users with invalid passwords.
+- [x] Should not create users with invalid passwords.
 - [x] Should not create two users with same email.
 
 ### Authenticate user

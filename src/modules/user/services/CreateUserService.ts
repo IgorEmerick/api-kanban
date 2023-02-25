@@ -5,6 +5,7 @@ import { IHashProvider } from '../providers/models/IHashProvider';
 import { IUserRepository } from '../repositories/IUserRepository';
 import { validateEmail } from '../utils/validateEmail';
 import { validateName } from '../utils/validateName';
+import { validatePassword } from '../utils/validatePassword';
 
 export class CreateUserService {
   constructor(
@@ -23,6 +24,12 @@ export class CreateUserService {
 
     if (!validName) {
       throw new AppError('Invalid name!', 400);
+    }
+
+    const validPassword = await validatePassword(password);
+
+    if (!validPassword) {
+      throw new AppError('Invalid password!', 400);
     }
 
     const existUser = await this.userRepository.findByEmail(email);
