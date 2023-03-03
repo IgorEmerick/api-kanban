@@ -9,7 +9,7 @@ interface IRequest extends FastifyRequest {
   body: Static<typeof createUserBody>;
 }
 
-export async function createUserHandler(
+export async function createUserHandle(
   request: IRequest,
   reply: FastifyReply,
 ): Promise<User> {
