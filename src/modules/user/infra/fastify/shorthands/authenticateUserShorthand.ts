@@ -8,7 +8,7 @@ export const authenticateUserShorthand: RouteShorthandOptions = {
     body: authenticateUserBody,
     response: {
       200: {
-        description: 'User successfully authenticated!',
+        description: 'Authentication token.',
         type: 'object',
         properties: {
           token: { type: 'string' },
