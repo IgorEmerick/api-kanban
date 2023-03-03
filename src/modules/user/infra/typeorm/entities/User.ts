@@ -1,7 +1,9 @@
+import { Project } from '@modules/board/infra/typeorm/entities/Project';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -25,4 +27,10 @@ export class User {
 
   @Column()
   password: string;
+
+  @ManyToMany(() => Project, project => project.admins)
+  managed_projects: Project[];
+
+  @ManyToMany(() => Project, project => project.members)
+  projects: Project[];
 }
