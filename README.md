@@ -21,7 +21,9 @@
 ### Create project
 - [ ] Request authentication.
 - [ ] Request project name.
-- [ ] Request admin
+- [ ] Request admin.
+- [ ] Request at least one admin.
+- [ ] Request at least one member.
 
 ### Update project name
 - [ ] Request authentication.
