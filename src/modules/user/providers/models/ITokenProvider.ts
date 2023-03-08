@@ -1,3 +1,4 @@
 export interface ITokenProvider {
-  generateToken(payload: string | object): Promise<string>;
+  generateToken(payload: object): Promise<string>;
+  validateToken<T>(token: string): Promise<T>;
 }
