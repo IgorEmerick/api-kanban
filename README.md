@@ -25,6 +25,10 @@
 - [ ] Request at least one admin.
 - [ ] Request at least one member.
 
+### List projects
+- [ ] Request authentication.
+- [ ] Authenticated user should list only projects where he is a member.
+
 ### Update project name
 - [ ] Request authentication.
 - [ ] The user requesting update should be a project admin.
